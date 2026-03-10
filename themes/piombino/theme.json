@@ -1,0 +1,231 @@
+{
+  "colors": {
+    "primary": "#5B3327",
+    "secondary": "#A98A70",
+    "accent": "#004459",
+    "background": "#FAF6F1"
+  },
+  "typography": {
+    "headingFont": "Arvo",
+    "bodyFont": "Montserrat"
+  },
+  "logoUrl": "assets/logo.png",
+  "heroImages": [
+    "assets/hero-1.jpg",
+    "assets/hero-2.jpg"
+  ],
+  "layout": "grid",
+  "content": {
+    "header": {
+      "badge": "Desde 1997",
+      "tagline": "Pasteleria, cafeteria y restaurante con una atmosfera calida y foco absoluto en mobile.",
+      "announcement": {
+        "text": "Inspirado en Piombino: hero editorial, vitrina movil persistente y framing serio para pedidos.",
+        "link": {
+          "label": "Ver carta",
+          "href": "/products"
+        }
+      },
+      "secondaryLinks": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/elpiombino/"
+        },
+        {
+          "label": "Contacto",
+          "href": "mailto:contacto@elpiombino.pe"
+        }
+      ],
+      "primaryAction": {
+        "label": "Pide aqui",
+        "href": "/products"
+      }
+    },
+    "navigation": {
+      "items": [
+        {
+          "label": "Inicio",
+          "href": "/"
+        },
+        {
+          "label": "Carta",
+          "href": "/products"
+        },
+        {
+          "label": "Pedido",
+          "href": "/cart"
+        }
+      ]
+    },
+    "footer": {
+      "title": "Piombino Store Theme",
+      "description": "Theme store mobile-first inspirado en la presencia visual de El Piombino, adaptado al host real de idx-store.",
+      "navigationTitle": "Navegacion",
+      "contactTitle": "Canales",
+      "contactText": "contacto@elpiombino.pe · Lima, Peru",
+      "legalNote": "El theme controla atmosfera, copy y framing; el host mantiene productos, stock, ordenes y checkout.",
+      "copyrightText": "2026 Piombino Store Theme",
+      "links": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/elpiombino/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/elpiombino/"
+        },
+        {
+          "label": "TikTok",
+          "href": "https://www.tiktok.com/@elpiombino"
+        }
+      ],
+      "columns": [
+        {
+          "title": "Mood del storefront",
+          "text": "Crema, marron y azul profundo sobre un storefront de compra directa y lectura rapida en mobile."
+        },
+        {
+          "title": "Operacion",
+          "links": [
+            {
+              "label": "Ver carta",
+              "href": "/products"
+            },
+            {
+              "label": "Revisar pedido",
+              "href": "/cart"
+            },
+            {
+              "label": "Checkout",
+              "href": "/checkout"
+            }
+          ]
+        }
+      ]
+    },
+    "home": {
+      "eyebrow": "Pasteleria · Cafeteria · Restaurante",
+      "heroTitle": "Sabores memorables con un storefront pensado para mobile",
+      "heroDescription": "Piombino adapta la energia del sitio original a un flujo real de ecommerce: hero inmersivo, CTA directa, productos destacados y una navegacion inferior persistente.",
+      "heroActions": [
+        {
+          "label": "Ver carta",
+          "href": "/products"
+        },
+        {
+          "label": "Revisar pedido",
+          "href": "/cart"
+        }
+      ],
+      "categoriesTitle": "Explora por momentos",
+      "categoriesDescription": "Usa las categorias del backend como vitrina de desayunos, almuerzos, bebidas o postres sin cambiar la fuente de datos.",
+      "featuredTitle": "Favoritos de la casa",
+      "featuredDescription": "El host sigue decidiendo productos destacados; el theme cambia la atmosfera con framing editorial y tono premium.",
+      "emptyTitle": "Aun no hay productos publicados",
+      "emptyDescription": "Cuando el catalogo este listo, este hero y sus CTAs seguiran funcionando con el mismo host.",
+      "sections": [
+        {
+          "eyebrow": "Desayunos",
+          "title": "Una vitrina que se siente local y cercana",
+          "description": "La home combina hero envolvente, CTA directa y chips de categoria para una exploracion rapida desde el celular.",
+          "tone": "accent"
+        },
+        {
+          "eyebrow": "Pasteleria",
+          "title": "Producto como pieza visual",
+          "description": "Las cards del catalogo y home priorizan imagen, categoria, precio y una accion rapida sin salir del contrato del host."
+        },
+        {
+          "eyebrow": "Operacion",
+          "title": "Dock movil para navegar, pedir y reclamar",
+          "description": "El dock del host toma inicio, carta, carrito y la primera public page aprobada si existe, como el libro de reclamaciones.",
+          "tone": "muted"
+        }
+      ]
+    },
+    "catalog": {
+      "eyebrow": "Carta",
+      "title": "Todo el menu de la casa",
+      "description": "Piombino convierte el catalogo en una carta viva: producto visual, filtros claros y foco en lectura vertical.",
+      "searchPlaceholder": "Busca desayunos, bebidas o postres",
+      "categoriesTitle": "Momentos",
+      "allCategoriesLabel": "Ver toda la carta",
+      "filtersLabel": "Filtrar carta",
+      "emptyTitle": "La carta aun no tiene productos activos",
+      "emptyDescription": "El host mostrara aqui el menu real apenas existan productos publicados.",
+      "sections": [
+        {
+          "title": "Compra rapida desde mobile",
+          "description": "Sidebar y drawer siguen siendo del host, pero el theme puede darles un framing mas gastronomico y legible."
+        },
+        {
+          "title": "Mood de cafeteria",
+          "description": "Usa copy de momentos del dia, texturas suaves y tonos crema para diferenciarte sin tocar la logica del ecommerce."
+        }
+      ]
+    },
+    "product": {
+      "backLabel": "Volver a la carta",
+      "descriptionTitle": "Sobre esta preparacion",
+      "quantityLabel": "Cantidad",
+      "addToCartLabel": "Agregar al pedido",
+      "addedLabel": "Agregado al pedido",
+      "relatedTitle": "Sigue armando tu mesa",
+      "blocks": [
+        {
+          "title": "Hecho para decision rapida",
+          "description": "El detalle combina precio, categoria y CTA clara, dejando que la descripcion refuerce ingredientes, ocasión o experiencia."
+        },
+        {
+          "title": "Retiro o entrega",
+          "description": "Usa bloques para explicar horarios, ventana de retiro o delivery sin crear reglas nuevas en backend.",
+          "tone": "muted"
+        }
+      ]
+    },
+    "cart": {
+      "title": "Tu pedido Piombino",
+      "description": "Revisa cantidades, subtotal y contexto operativo antes de pasar al checkout.",
+      "emptyTitle": "Tu pedido aun esta vacio",
+      "emptyDescription": "Agrega productos de la carta para continuar.",
+      "continueShoppingLabel": "Seguir viendo la carta",
+      "summaryTitle": "Resumen",
+      "shippingLabel": "Entrega",
+      "shippingValue": "Se coordina con el local",
+      "checkoutLabel": "Continuar con mis datos",
+      "summaryNote": "El host mantiene la logica del pedido; el theme solo ordena mejor la lectura y la confianza visual.",
+      "blocks": [
+        {
+          "title": "Lectura clara en mobile",
+          "description": "El resumen se mantiene corto, visible y consistente con el dock inferior del storefront."
+        }
+      ]
+    },
+    "checkout": {
+      "title": "Confirma tu pedido",
+      "description": "Piombino lleva la misma atmosfera al checkout, pero sin esconder que la validacion y la creacion de orden siguen siendo del host.",
+      "backLabel": "Volver al pedido",
+      "emptyTitle": "No hay items para confirmar",
+      "emptyDescription": "Agrega productos antes de iniciar el checkout.",
+      "submitLabel": "Enviar pedido",
+      "submitLoadingLabel": "Enviando pedido",
+      "sections": {
+        "contactTitle": "Datos del comprador",
+        "paymentTitle": "Pago y comprobante",
+        "summaryTitle": "Resumen final",
+        "pickupTitle": "Entrega o retiro"
+      },
+      "blocks": [
+        {
+          "title": "Antes de enviar",
+          "description": "Verifica telefono, correo y disponibilidad del pedido antes de confirmar."
+        },
+        {
+          "title": "Sin promesas falsas",
+          "description": "Este theme no crea un checkout nuevo; solo mejora el framing visual del flujo actual.",
+          "tone": "accent"
+        }
+      ]
+    }
+  }
+}

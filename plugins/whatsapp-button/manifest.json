@@ -1,0 +1,80 @@
+{
+  "kind": "plugin",
+  "name": "WhatsApp Button",
+  "slug": "whatsapp-button",
+  "version": "1.0.0",
+  "sdkVersion": "1.0.0",
+  "description": "Floating WhatsApp button with branch selector for storefronts. Lets customers choose a location and start a WhatsApp conversation.",
+  "hooks": [
+    "store.layout.footer",
+    "booking.layout.footer"
+  ],
+  "entry": "src/plugin.js",
+  "stylesheet": "src/plugin.css",
+  "capabilities": [
+    {
+      "key": "floating_whatsapp_button",
+      "name": "Floating WhatsApp button",
+      "category": "storefront",
+      "level": "core",
+      "description": "Injects a floating action button with branch selector popup in store and booking surfaces."
+    }
+  ],
+  "configFields": [
+    {
+      "key": "branches",
+      "label": "Sucursales",
+      "type": "json",
+      "description": "Lista de sucursales con nombre y telefono.",
+      "placeholder": "[{\"name\": \"Principal\", \"phone\": \"5491155551234\"}]"
+    },
+    {
+      "key": "message",
+      "label": "Mensaje predeterminado",
+      "type": "text",
+      "placeholder": "Hola, me gustaria hacer una consulta"
+    },
+    {
+      "key": "popupTitle",
+      "label": "Titulo del popup",
+      "type": "text",
+      "placeholder": "Selecciona un local"
+    },
+    {
+      "key": "position",
+      "label": "Posicion del boton",
+      "type": "select",
+      "options": [
+        { "value": "bottom-right", "label": "Inferior derecha" },
+        { "value": "bottom-left", "label": "Inferior izquierda" }
+      ]
+    },
+    {
+      "key": "buttonColor",
+      "label": "Color del boton",
+      "type": "text",
+      "placeholder": "#25D366"
+    }
+  ],
+  "config": {
+    "branches": [
+      { "name": "Principal", "phone": "5491155551234" }
+    ],
+    "message": "Hola, me gustaria hacer una consulta",
+    "popupTitle": "Selecciona un local",
+    "position": "bottom-right",
+    "buttonColor": "#25D366"
+  },
+  "surfaces": [
+    "store",
+    "booking"
+  ],
+  "supportedContracts": [
+    {
+      "name": "IDX Plugin Runtime",
+      "version": "1.0.0",
+      "mode": "frontend_only",
+      "description": "Client-side plugin running in store and booking frontends via the IDX Plugin slot system."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.1.0",
+  "id": "piombino-storefront-theme",
+  "name": "Piombino Storefront Theme",
+  "version": "1.0.0",
+  "author": "IDX",
+  "targets": [
+    "store"
+  ],
+  "mode": "bundle-reference",
+  "portableThemeFile": "theme.json",
+  "previewAsset": "assets/hero-1.jpg",
+  "bundleAssets": [
+    "assets/logo.png",
+    "assets/hero-1.jpg",
+    "assets/hero-2.jpg"
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "surface": "home"
+    },
+    {
+      "id": "catalog",
+      "path": "/products",
+      "surface": "catalog"
+    },
+    {
+      "id": "product",
+      "path": "/products/[slug]",
+      "surface": "product"
+    },
+    {
+      "id": "cart",
+      "path": "/cart",
+      "surface": "cart"
+    },
+    {
+      "id": "checkout",
+      "path": "/checkout",
+      "surface": "checkout"
+    },
+    {
+      "id": "plugin-public-page",
+      "path": "/plugins/[pluginSlug]",
+      "surface": "plugin-public-page"
+    }
+  ],
+  "surfaces": {
+    "shell": [
+      "header",
+      "navigation",
+      "footer"
+    ],
+    "pages": [
+      "home",
+      "catalog",
+      "product",
+      "cart",
+      "checkout"
+    ],
+    "pluginSlots": [
+      "footer-links",
+      "footer-before",
+      "footer-after",
+      "product-after-description",
+      "cart-after-summary",
+      "checkout-before-submit"
+    ],
+    "pluginPublicPages": [
+      "claims-book"
+    ]
+  },
+  "designIntent": {
+    "direction": "Piombino-inspired mobile-first storefront",
+    "keywords": [
+      "warm",
+      "editorial",
+      "mobile",
+      "restaurant",
+      "premium-casual"
+    ]
+  },
+  "notes": [
+    "theme.json inside the raw bundle may reference assets/... paths; ingest must rewrite them to published internal paths before runtime.",
+    "The published example in idx-store/docs/themes/piombino-store-theme.example.json already points to internal runtime-safe assets under /theme-previews/piombino/.",
+    "This theme assumes the host runtime includes header CTA support, heroActions and the mobile dock introduced in idx-store March 2026.",
+    "Plugin public pages such as claims-book remain optional; if an approved public page exists, the host can surface it in footer and mobile dock."
+  ],
+  "kind": "theme",
+  "target": "store",
+  "slug": "piombino-store-theme",
+  "description": "Piombino-inspired mobile-first storefront theme adapted to the idx-store host contract.",
+  "assets": {
+    "logo": "assets/logo.png",
+    "heroImages.0": "assets/hero-1.jpg",
+    "heroImages.1": "assets/hero-2.jpg"
+  }
+}
