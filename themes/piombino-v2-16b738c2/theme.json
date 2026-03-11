@@ -1,0 +1,144 @@
+{
+  "colors": {
+    "primary": "#5B3327",
+    "secondary": "#A98A70",
+    "accent": "#004459",
+    "background": "#FAF6F1",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#ECDFCF",
+    "line": "#D4C3AF",
+    "text": "#3D2A22",
+    "muted": "#8B7355"
+  },
+  "typography": {
+    "headingFont": "Arvo",
+    "bodyFont": "Montserrat"
+  },
+  "logoUrl": "assets/logo.png",
+  "footerLogoUrl": "assets/logo-vertical.png",
+  "heroImages": [],
+  "layout": "grid",
+  "presentation": {
+    "mode": "immersive",
+    "categoryMenu": "grid",
+    "mobileDock": "sheet",
+    "productCards": "editorial"
+  },
+  "customCss": "[data-store-presentation=immersive] { --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); } [data-store-presentation=immersive] .store-fade-up { animation-timing-function: var(--ease-out-expo); animation-duration: 0.7s; } [data-store-presentation=immersive] .store-fade-in { animation-timing-function: var(--ease-out-expo); animation-duration: 0.5s; } [data-store-presentation=immersive] header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background-color: color-mix(in srgb, var(--store-background) 85%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--store-line) 40%, transparent); } [data-store-presentation=immersive] footer { background-color: var(--store-primary); color: var(--store-background); } [data-store-presentation=immersive] footer a { color: color-mix(in srgb, var(--store-background) 60%, transparent); } [data-store-presentation=immersive] footer a:hover { color: var(--store-background); } [data-store-presentation=immersive] [data-store-mobile-dock=sheet] { border-top: 1px solid color-mix(in srgb, var(--store-line) 30%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background-color: color-mix(in srgb, var(--store-background) 92%, transparent); }",
+  "content": {
+    "header": {
+      "badge": "Desde 1997",
+      "tagline": "Pastelería, cafetería y restaurante",
+      "items": [
+        { "label": "Inicio", "href": "/" },
+        { "label": "Carta", "href": "/products" },
+        { "label": "Pedido", "href": "/cart" }
+      ],
+      "secondaryLinks": [
+        { "label": "Instagram", "href": "https://www.instagram.com/elpiombino/" },
+        { "label": "Contacto", "href": "mailto:contacto@elpiombino.pe" }
+      ],
+      "primaryAction": {
+        "label": "Ver carta",
+        "href": "/products"
+      }
+    },
+    "navigation": {
+      "items": [
+        { "label": "Inicio", "href": "/" },
+        { "label": "Carta", "href": "/products" },
+        { "label": "Pedido", "href": "/cart" }
+      ]
+    },
+    "footer": {
+      "title": "El Piombino",
+      "description": "Cafetería, pastelería y restaurante desde 1997. Sabores que se quedan.",
+      "navigationTitle": "Navegación",
+      "contactTitle": "Contacto",
+      "contactText": "contacto@elpiombino.pe",
+      "copyrightText": "El Piombino. Todos los derechos reservados.",
+      "links": [
+        { "label": "Instagram", "href": "https://www.instagram.com/elpiombino/" },
+        { "label": "Facebook", "href": "https://www.facebook.com/elpiombino/" },
+        { "label": "TikTok", "href": "https://www.tiktok.com/@elpiombino" }
+      ],
+      "columns": [
+        {
+          "title": "Nuestro menú",
+          "links": [
+            { "label": "Ver carta", "href": "/products" },
+            { "label": "Revisar pedido", "href": "/cart" }
+          ]
+        }
+      ],
+      "policyLinks": [
+        { "label": "Política de privacidad", "href": "/plugins/politica-privacidad" },
+        { "label": "Política de cookies", "href": "/plugins/politica-cookies" }
+      ],
+      "creditText": "Desarrollado por Enigma Developers",
+      "creditLink": { "label": "Enigma Developers SAC", "href": "https://enigmasac.com" }
+    },
+    "home": {
+      "eyebrow": "Pastelería \u00b7 Cafetería \u00b7 Restaurante",
+      "heroTitle": "Sabores que se quedan",
+      "heroDescription": "Descubre nuestra carta completa y haz tu pedido para recoger en el local que prefieras.",
+      "heroActions": [
+        { "label": "Ver carta", "href": "/products" },
+        { "label": "Mi pedido", "href": "/cart" }
+      ],
+      "categoriesTitle": "Explora por categoría",
+      "categoriesDescription": "Desayunos, almuerzos, pastelería, bebidas y más.",
+      "featuredTitle": "Favoritos de la casa",
+      "featuredDescription": "Los platos y preparaciones que más piden nuestros clientes.",
+      "emptyTitle": "Pronto publicaremos nuestra carta",
+      "emptyDescription": "Estamos preparando el menú. Vuelve pronto para ver nuestros productos."
+    },
+    "catalog": {
+      "eyebrow": "Nuestra carta",
+      "title": "Todo el menú de la casa",
+      "description": "Explora nuestras categorías, busca tu plato favorito y agrega al pedido.",
+      "searchPlaceholder": "Busca en nuestra carta...",
+      "categoriesTitle": "Categorías",
+      "categoriesDescription": "Elige una categoría para explorar nuestro menú.",
+      "allCategoriesLabel": "Toda la carta",
+      "filtersLabel": "Filtrar",
+      "emptyTitle": "No hay productos en esta categoría",
+      "emptyDescription": "Prueba con otra categoría o busca directamente."
+    },
+    "product": {
+      "backLabel": "Volver a la carta",
+      "descriptionTitle": "Sobre esta preparación",
+      "quantityLabel": "Cantidad",
+      "addToCartLabel": "Agregar al pedido",
+      "addedLabel": "Agregado",
+      "relatedTitle": "También te puede gustar"
+    },
+    "cart": {
+      "title": "Tu pedido",
+      "description": "Revisa los productos seleccionados antes de continuar.",
+      "emptyTitle": "Tu pedido está vacío",
+      "emptyDescription": "Explora nuestra carta y agrega lo que más te guste.",
+      "continueShoppingLabel": "Seguir viendo la carta",
+      "summaryTitle": "Resumen del pedido",
+      "shippingLabel": "Entrega",
+      "shippingValue": "Retiro en local",
+      "checkoutLabel": "Continuar con mis datos",
+      "summaryNote": "El monto final se confirma al momento del retiro."
+    },
+    "checkout": {
+      "title": "Confirma tu pedido",
+      "description": "Completa tus datos para finalizar.",
+      "backLabel": "Volver al pedido",
+      "emptyTitle": "No hay productos en tu pedido",
+      "emptyDescription": "Agrega productos desde la carta para continuar.",
+      "submitLabel": "Enviar pedido",
+      "submitLoadingLabel": "Enviando...",
+      "sections": {
+        "contactTitle": "Tus datos",
+        "paymentTitle": "Pago y comprobante",
+        "summaryTitle": "Resumen final",
+        "pickupTitle": "Retiro en local"
+      }
+    }
+  }
+}

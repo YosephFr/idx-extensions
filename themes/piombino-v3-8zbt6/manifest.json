@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.1.0",
+  "kind": "theme",
+  "target": "store",
+  "id": "piombino-v3-8zbt6",
+  "slug": "piombino-v3-8zbt6",
+  "name": "El Piombino v3",
+  "description": "Tema immersive fiel a la identidad visual de El Piombino: paleta warm brown/cream/blue, tipografía Arvo + Montserrat, continuidad total con la landing del restaurante.",
+  "version": "3.0.0",
+  "author": "IDX",
+  "targets": ["store"],
+  "mode": "bundle-reference",
+  "portableThemeFile": "theme.json",
+  "previewAsset": "assets/logo.png",
+  "bundleAssets": [
+    "assets/logo.png",
+    "assets/logo-vertical.png"
+  ],
+  "routes": [
+    { "id": "home", "path": "/", "surface": "home" },
+    { "id": "catalog", "path": "/products", "surface": "catalog" },
+    { "id": "product", "path": "/products/[slug]", "surface": "product" },
+    { "id": "cart", "path": "/cart", "surface": "cart" },
+    { "id": "checkout", "path": "/checkout", "surface": "checkout" },
+    { "id": "plugin-public-page", "path": "/plugins/[pluginSlug]", "surface": "plugin-public-page" }
+  ],
+  "surfaces": {
+    "shell": ["header", "navigation", "footer", "mobile-dock"],
+    "pages": ["home", "catalog", "product", "cart", "checkout"],
+    "pluginSlots": [
+      "footer-links",
+      "footer-before",
+      "footer-after",
+      "product-after-description",
+      "cart-after-summary",
+      "checkout-before-submit"
+    ],
+    "pluginPublicPages": ["claims-book"]
+  },
+  "designIntent": {
+    "direction": "Réplica fiel del sitio web de El Piombino adaptada a ecommerce immersive",
+    "keywords": ["warm", "immersive", "editorial", "restaurant", "premium-casual", "piombino"]
+  },
+  "assets": {
+    "logo": "assets/logo.png",
+    "footerLogo": "assets/logo-vertical.png"
+  }
+}
