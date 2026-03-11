@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.1.0",
+  "id": "piombino-v2-8zbt6",
+  "name": "Piombino Storefront Theme V2 8zbt6",
+  "version": "2.0.0",
+  "author": "IDX",
+  "targets": [
+    "store"
+  ],
+  "mode": "bundle-reference",
+  "portableThemeFile": "theme.json",
+  "previewAsset": "assets/hero-1.jpg",
+  "bundleAssets": [
+    "assets/logo.png",
+    "assets/logo-vertical.png",
+    "assets/hero-1.jpg",
+    "assets/hero-2.jpg",
+    "assets/hero-3.jpg",
+    "assets/hero-4.jpg"
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "surface": "home"
+    },
+    {
+      "id": "catalog",
+      "path": "/products",
+      "surface": "catalog"
+    },
+    {
+      "id": "product",
+      "path": "/products/[slug]",
+      "surface": "product"
+    },
+    {
+      "id": "cart",
+      "path": "/cart",
+      "surface": "cart"
+    },
+    {
+      "id": "checkout",
+      "path": "/checkout",
+      "surface": "checkout"
+    },
+    {
+      "id": "plugin-public-page",
+      "path": "/plugins/[pluginSlug]",
+      "surface": "plugin-public-page"
+    }
+  ],
+  "surfaces": {
+    "shell": [
+      "header",
+      "navigation",
+      "footer",
+      "mobile-dock"
+    ],
+    "pages": [
+      "home",
+      "catalog",
+      "product",
+      "cart",
+      "checkout"
+    ],
+    "pluginSlots": [
+      "footer-links",
+      "footer-before",
+      "footer-after",
+      "product-after-description",
+      "cart-after-summary",
+      "checkout-before-submit"
+    ],
+    "pluginPublicPages": [
+      "claims-book"
+    ]
+  },
+  "designIntent": {
+    "direction": "Piombino immersive ecommerce shell derived from the original restaurant landing",
+    "keywords": [
+      "piombino",
+      "restaurant",
+      "immersive",
+      "editorial",
+      "warm",
+      "mobile-first"
+    ]
+  },
+  "notes": [
+    "Built for the immersive store theme contract introduced in idx-store March 2026.",
+    "Reuses real Piombino logos and hero photography from the reference source bundle.",
+    "Adapts the original landing continuity into ecommerce-first routes without external order CTAs."
+  ],
+  "kind": "theme",
+  "target": "store",
+  "slug": "piombino-v2-8zbt6",
+  "description": "Immersive Piombino storefront theme adapted from the original brand website into an ecommerce-first flow.",
+  "assets": {
+    "logoUrl": "assets/logo.png",
+    "footerLogoUrl": "assets/logo-vertical.png",
+    "heroImages.0": "assets/hero-1.jpg",
+    "heroImages.1": "assets/hero-2.jpg",
+    "heroImages.2": "assets/hero-3.jpg",
+    "heroImages.3": "assets/hero-4.jpg"
+  }
+}

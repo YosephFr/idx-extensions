@@ -35,13 +35,24 @@ A store theme bundle is a ZIP archive containing the following files:
       "primary": "#0f172a",
       "secondary": "#334155",
       "accent": "#f97316",
-      "background": "#fff7ed"
+      "background": "#fff7ed",
+      "surface": "#ffffff",
+      "surfaceAlt": "#f8fafc",
+      "line": "#e2e8f0",
+      "text": "#0f172a",
+      "muted": "#64748b"
     },
     "typography": {
       "headingFont": "Manrope",
       "bodyFont": "Manrope"
     },
-    "layout": "grid"
+    "layout": "grid",
+    "presentation": {
+      "mode": "immersive",
+      "categoryMenu": "grid",
+      "mobileDock": "sheet",
+      "productCards": "editorial"
+    }
   },
   "content": {
     "heroTitle": "Headline override",
@@ -49,6 +60,7 @@ A store theme bundle is a ZIP archive containing the following files:
   },
   "assets": {
     "logoUrl": "assets/logo.svg",
+    "footerLogoUrl": "assets/logo-footer.svg",
     "heroImages.0": "assets/hero-1.jpg"
   }
 }
@@ -81,6 +93,11 @@ The `settings.colors` object defines the storefront color palette. All values mu
 | `secondary` | Secondary color. Used for supporting UI elements and secondary actions. |
 | `accent` | Accent color. Used for highlights, badges, and attention-drawing elements. |
 | `background` | Base background color for the storefront. |
+| `surface` | Elevated theme surface for cards and framed panels. |
+| `surfaceAlt` | Alternate surface used for softer cards, drawers, or mobile sheets. |
+| `line` | Border and separator color. |
+| `text` | Main text color. |
+| `muted` | Secondary and helper text color. |
 
 ### Typography
 
@@ -102,15 +119,26 @@ The `settings.layout` field controls the default product display mode.
 | `"grid"` | Products displayed in a responsive grid layout. |
 | `"list"` | Products displayed in a vertical list layout. |
 
+### Presentation
+
+The optional `settings.presentation` object lets a store theme request deeper host-rendered presentation changes without breaking storefront compatibility.
+
+| Field | Values | Description |
+|---|---|---|
+| `mode` | `"default"` \| `"immersive"` | Enables a richer host shell for themes that want stronger visual continuity across pages. |
+| `categoryMenu` | `"chips"` \| `"grid"` | Controls whether categories render as chips or a visual grid. |
+| `mobileDock` | `"default"` \| `"sheet"` | Controls the mobile navigation style. |
+| `productCards` | `"default"` \| `"editorial"` | Switches product cards between standard and editorial layouts. |
+
 ## Content Overrides
 
 The `content` object in both the manifest and `theme.json` allows themes to override user-facing copy throughout the storefront. Content overrides are organized by page and section:
 
 - **Header** — Badge text, tagline, announcement text, navigation labels, and action labels.
 - **Navigation** — Menu item labels and link targets.
-- **Footer** — Title, description, contact information, social links, and column content.
+- **Footer** — Title, description, contact information, social links, policy links, and credit/footer metadata.
 - **Home** — Eyebrow text, hero title, hero description, call-to-action labels, and featured section headings.
-- **Catalog** — Page title, search placeholder, category labels, and empty state messages.
+- **Catalog** — Page title, search placeholder, category labels, category intro copy, and empty state messages.
 - **Product Detail** — Back navigation label, quantity label, add-to-cart label, and related products heading.
 - **Cart** — Summary labels, shipping information, and supplementary content blocks.
 - **Checkout** — Contact section labels, payment section labels, and order summary copy.
@@ -124,6 +152,7 @@ The `assets` object maps logical asset keys to bundled file paths. During the up
 | Key Pattern | Description |
 |---|---|
 | `logoUrl` | Brand logo displayed in the storefront header and footer. |
+| `footerLogoUrl` | Optional alternate footer logo, useful for vertical brand marks. |
 | `heroImages.0`, `heroImages.1` | Hero banner images for the homepage carousel. |
 
 Asset paths must be relative to the bundle root. Supported formats include SVG, PNG, JPG, and WebP.
