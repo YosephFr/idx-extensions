@@ -1,0 +1,226 @@
+{
+  "id": "default-booking-theme",
+  "name": "Default Booking Theme",
+  "slug": "default-booking-theme",
+  "status": "approved",
+  "active": true,
+  "manifest": {
+    "kind": "booking-theme",
+    "schemaVersion": "1.0.0",
+    "sdkVersion": "booking-host-2026-03",
+    "host": "idx-booking",
+    "name": "Default Booking Theme",
+    "slug": "default-booking-theme",
+    "description": "Reference bundle aligned with the current idx-booking runtime.",
+    "surfaces": [
+      "layout",
+      "header",
+      "sidebar",
+      "mobileMenu",
+      "hero",
+      "booking",
+      "footer",
+      "success",
+      "claims"
+    ],
+    "routes": [
+      "/",
+      "/[publicPage]"
+    ],
+    "pluginSlots": [
+      "layout.beforeHeader",
+      "layout.afterHeader",
+      "layout.hero.before",
+      "layout.hero.after",
+      "layout.beforeContent",
+      "layout.afterContent",
+      "layout.footer.before",
+      "layout.footer",
+      "layout.footer.after",
+      "booking.hero.before",
+      "booking.hero.after",
+      "booking.footer.before",
+      "booking.footer.after",
+      "booking.success.before",
+      "booking.success.after",
+      "booking.claims.before",
+      "booking.claims.after"
+    ],
+    "capabilities": [
+      "color-palette",
+      "typography",
+      "copy-overrides",
+      "booking-flow-copy",
+      "claims-page-branding",
+      "plugin-slot-content",
+      "powered-by-branding"
+    ]
+  },
+  "assets": {
+    "logo": "/assets/booking/default-booking-logo.svg",
+    "poweredByLogo": "/assets/simplifies/logo-dark.png"
+  },
+  "theme": {
+    "colors": {
+      "primary": "#ec7623",
+      "secondary": "#f59e0b",
+      "accent": "#f97316",
+      "background": "#faf7f2",
+      "elevated": "#ffffff",
+      "card": "#fffaf4",
+      "muted": "#f6ede2",
+      "textPrimary": "#18181b",
+      "textSecondary": "#52525b",
+      "textMuted": "#71717a",
+      "border": "#e7d9c6",
+      "borderHover": "#d6c1a4",
+      "footerBackground": "#1f2937",
+      "footerText": "#f9fafb"
+    },
+    "typography": {
+      "headingFont": "Poppins",
+      "bodyFont": "Poppins"
+    },
+    "copy": {
+      "pageTitle": "Book your next visit",
+      "pageDescription": "Choose services, professionals, and time slots from a single booking flow.",
+      "headerTitle": "Studio bookings",
+      "headerSubtitle": "Live availability across branches and professionals.",
+      "footerBadge": "Online booking",
+      "footerTitle": "Studio bookings",
+      "footerDescription": "Keep the booking experience fast, clear, and branch-aware from the first click to the confirmation state.",
+      "footerCtaLabel": "Contact this location",
+      "footerCtaHref": "https://example.com/contact",
+      "poweredByLabel": "powered by",
+      "poweredByHref": "https://simplifies.cl",
+      "poweredByCtaLabel": "launch your own booking stack",
+      "successTitle": "Reservation confirmed",
+      "successSubtitle": "Your reservation is saved. We also prepared the details for your calendar.",
+      "newBookingLabel": "Create another reservation"
+    },
+    "layout": {
+      "eyebrow": "Online booking",
+      "title": "Plan your next visit",
+      "description": "Pick services, professionals, and time slots without leaving the booking flow.",
+      "highlight": "Branch-aware availability"
+    },
+    "header": {
+      "title": "Studio bookings",
+      "subtitle": "Live availability, branch context, and a clean reset path on mobile.",
+      "branchPlaceholder": "Choose branch",
+      "resetTitle": "Start over?",
+      "resetDescription": "Resetting the flow will discard the current reservation progress."
+    },
+    "sidebar": {
+      "title": "Studio bookings",
+      "subtitle": "Keep branch details, opening hours, and claims access visible while the booking flow stays focused.",
+      "branchLabel": "Branch",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "hoursLabel": "Hours",
+      "poweredByLabel": "powered by",
+      "poweredByHref": "https://simplifies.cl",
+      "poweredByCtaLabel": "launch your own booking stack"
+    },
+    "mobileMenu": {
+      "title": "Studio bookings",
+      "subtitle": "The mobile drawer mirrors the operational context from the desktop shell.",
+      "closeLabel": "Close menu",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "hoursLabel": "Hours",
+      "poweredByLabel": "powered by",
+      "poweredByHref": "https://simplifies.cl",
+      "poweredByCtaLabel": "launch your own booking stack"
+    },
+    "hero": {
+      "badge": "Online booking",
+      "title": "Book services, professionals, and time slots in one flow",
+      "description": "Use the host hero to frame the booking state, surface claims access, and keep supporting CTAs close to the active reservation summary.",
+      "primaryCta": {
+        "label": "View booking policies",
+        "href": "https://example.com/booking-policies"
+      },
+      "secondaryCta": {
+        "label": "Need help?",
+        "href": "https://example.com/support"
+      }
+    },
+    "booking": {
+      "badge": "Booking flow",
+      "title": "Reservation summary",
+      "description": "The booking hero and sticky footer stay aligned around the selected services, branch, and next step.",
+      "summaryLabel": "Current reservation",
+      "continueLabel": "Continue reservation"
+    },
+    "footer": {
+      "badge": "Booking host",
+      "title": "Stay inside the booking flow",
+      "description": "Use the footer card for brand reinforcement, a high-confidence CTA, powered-by disclosure, and the claims link when a claims plugin is active.",
+      "cta": {
+        "label": "Contact this branch",
+        "href": "https://example.com/contact"
+      },
+      "poweredByLabel": "powered by",
+      "poweredByHref": "https://simplifies.cl",
+      "poweredByCtaLabel": "launch your own booking stack"
+    },
+    "success": {
+      "badge": "Reservation confirmed",
+      "title": "Your visit is confirmed",
+      "subtitle": "The success state summarizes services, timing, pricing, and lets the user create a fresh booking immediately.",
+      "calendarLabel": "Add to Google Calendar",
+      "newBookingLabel": "Book another visit",
+      "summaryLabel": "Services booked"
+    },
+    "claims": {
+      "badge": "Claims and requests",
+      "title": "Submit a claim, complaint, or request",
+      "description": "Use this page to report an issue related to a booking and keep the follow-up tied to the right location.",
+      "submitLabel": "Send claim",
+      "successTitle": "Claim received",
+      "successDescription": "We received your request and the team will follow up through the contact details you provided.",
+      "readOnlyTitle": "Submission channel pending",
+      "readOnlyDescription": "This page is already visible, but the location still needs a live intake channel before submissions can be sent."
+    },
+    "slots": {
+      "layout.beforeHeader": {
+        "badge": "Brand notice",
+        "title": "Need to change branch?",
+        "description": "Use the branch selector before advancing to professionals and time slots."
+      },
+      "booking.hero.after": {
+        "badge": "Help",
+        "title": "Prefer to talk with the team?",
+        "description": "Reach support before confirming if you need accessibility or schedule guidance.",
+        "ctaLabel": "Open support",
+        "ctaHref": "https://example.com/support"
+      },
+      "layout.footer": {
+        "badge": "Policy",
+        "title": "Cancellation window",
+        "description": "Cancellations can be rescheduled up to 24 hours before the appointment.",
+        "ctaLabel": "Review policy",
+        "ctaHref": "https://example.com/cancellation-policy"
+      },
+      "booking.success.after": {
+        "badge": "Next step",
+        "title": "Prepare for your visit",
+        "description": "Bring your reservation code if the branch team needs to cross-check the booking."
+      },
+      "booking.claims.after": {
+        "badge": "Response policy",
+        "title": "What happens after submission?",
+        "description": "The team reviews each case and follows up with the same contact details shared in the form."
+      }
+    }
+  },
+  "overrides": {
+    "footer": {
+      "badge": "Default booking host"
+    },
+    "claims": {
+      "submitLabel": "Submit case"
+    }
+  }
+}

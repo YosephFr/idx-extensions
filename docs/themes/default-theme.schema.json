@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idx.local/schemas/default-storefront-theme.schema.json",
+  "title": "IDX Default Storefront Theme",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "colors": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "secondary": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "background": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "headingFont": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "bodyFont": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      }
+    },
+    "logoUrl": {
+      "type": "string",
+      "pattern": "^(\\/[^\\s]*|https://.+)$"
+    },
+    "heroImages": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "pattern": "^(\\/[^\\s]*|https://.+)$"
+      }
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["grid", "list"]
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "header": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "badge": { "type": "string", "maxLength": 32 },
+            "tagline": { "type": "string", "maxLength": 120 },
+            "items": { "$ref": "#/$defs/links" },
+            "secondaryLinks": { "$ref": "#/$defs/links" },
+            "primaryAction": { "$ref": "#/$defs/link" },
+            "announcement": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "text": { "type": "string", "maxLength": 160 },
+                "link": { "$ref": "#/$defs/link" }
+              }
+            }
+          }
+        },
+        "navigation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "items": { "$ref": "#/$defs/links" }
+          }
+        },
+        "footer": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": { "type": "string", "maxLength": 80 },
+            "description": { "type": "string", "maxLength": 280 },
+            "navigationTitle": { "type": "string", "maxLength": 48 },
+            "contactTitle": { "type": "string", "maxLength": 48 },
+            "contactText": { "type": "string", "maxLength": 160 },
+            "legalNote": { "type": "string", "maxLength": 220 },
+            "copyrightText": { "type": "string", "maxLength": 120 },
+            "links": { "$ref": "#/$defs/links" },
+            "columns": {
+              "type": "array",
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "title": { "type": "string", "maxLength": 80 },
+                  "text": { "type": "string", "maxLength": 220 },
+                  "links": { "$ref": "#/$defs/links" }
+                }
+              }
+            }
+          }
+        },
+        "home": { "$ref": "#/$defs/pageContentHome" },
+        "catalog": { "$ref": "#/$defs/pageContentCatalog" },
+        "product": { "$ref": "#/$defs/pageContentProduct" },
+        "cart": { "$ref": "#/$defs/pageContentCart" },
+        "checkout": { "$ref": "#/$defs/pageContentCheckout" }
+      }
+    }
+  },
+  "$defs": {
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string", "maxLength": 80 },
+        "href": {
+          "type": "string",
+          "pattern": "^(\\/[^\\s]*|#[A-Za-z0-9_-]+|https:\\/\\/.+|mailto:.+|tel:.+)$"
+        },
+        "external": { "type": "boolean" }
+      },
+      "required": ["label", "href"]
+    },
+    "links": {
+      "type": "array",
+      "maxItems": 12,
+      "items": { "$ref": "#/$defs/link" }
+    },
+    "tone": {
+      "type": "string",
+      "enum": ["default", "muted", "accent"]
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "maxLength": 80 },
+        "eyebrow": { "type": "string", "maxLength": 48 },
+        "title": { "type": "string", "maxLength": 80 },
+        "description": { "type": "string", "maxLength": 320 },
+        "links": { "$ref": "#/$defs/links" },
+        "tone": { "$ref": "#/$defs/tone" }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/block" }
+    },
+    "pageContentHome": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": { "type": "string", "maxLength": 48 },
+        "heroTitle": { "type": "string", "maxLength": 120 },
+        "heroDescription": { "type": "string", "maxLength": 320 },
+        "heroCtaLabel": { "type": "string", "maxLength": 64 },
+        "heroActions": { "$ref": "#/$defs/links" },
+        "categoriesTitle": { "type": "string", "maxLength": 80 },
+        "categoriesDescription": { "type": "string", "maxLength": 220 },
+        "featuredTitle": { "type": "string", "maxLength": 80 },
+        "featuredDescription": { "type": "string", "maxLength": 220 },
+        "emptyTitle": { "type": "string", "maxLength": 80 },
+        "emptyDescription": { "type": "string", "maxLength": 220 },
+        "sections": { "$ref": "#/$defs/blocks" }
+      }
+    },
+    "pageContentCatalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": { "type": "string", "maxLength": 48 },
+        "title": { "type": "string", "maxLength": 80 },
+        "description": { "type": "string", "maxLength": 220 },
+        "searchPlaceholder": { "type": "string", "maxLength": 80 },
+        "categoriesTitle": { "type": "string", "maxLength": 48 },
+        "allCategoriesLabel": { "type": "string", "maxLength": 48 },
+        "filtersLabel": { "type": "string", "maxLength": 48 },
+        "emptyTitle": { "type": "string", "maxLength": 80 },
+        "emptyDescription": { "type": "string", "maxLength": 220 },
+        "sections": { "$ref": "#/$defs/blocks" }
+      }
+    },
+    "pageContentProduct": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "backLabel": { "type": "string", "maxLength": 64 },
+        "descriptionTitle": { "type": "string", "maxLength": 80 },
+        "quantityLabel": { "type": "string", "maxLength": 48 },
+        "addToCartLabel": { "type": "string", "maxLength": 64 },
+        "addedLabel": { "type": "string", "maxLength": 64 },
+        "relatedTitle": { "type": "string", "maxLength": 80 },
+        "blocks": { "$ref": "#/$defs/blocks" }
+      }
+    },
+    "pageContentCart": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "maxLength": 80 },
+        "description": { "type": "string", "maxLength": 220 },
+        "emptyTitle": { "type": "string", "maxLength": 80 },
+        "emptyDescription": { "type": "string", "maxLength": 220 },
+        "continueShoppingLabel": { "type": "string", "maxLength": 64 },
+        "summaryTitle": { "type": "string", "maxLength": 64 },
+        "shippingLabel": { "type": "string", "maxLength": 48 },
+        "shippingValue": { "type": "string", "maxLength": 64 },
+        "checkoutLabel": { "type": "string", "maxLength": 64 },
+        "summaryNote": { "type": "string", "maxLength": 220 },
+        "blocks": { "$ref": "#/$defs/blocks" }
+      }
+    },
+    "pageContentCheckout": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "maxLength": 80 },
+        "description": { "type": "string", "maxLength": 220 },
+        "backLabel": { "type": "string", "maxLength": 64 },
+        "emptyTitle": { "type": "string", "maxLength": 80 },
+        "emptyDescription": { "type": "string", "maxLength": 220 },
+        "submitLabel": { "type": "string", "maxLength": 80 },
+        "submitLoadingLabel": { "type": "string", "maxLength": 80 },
+        "sections": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "contactTitle": { "type": "string", "maxLength": 64 },
+            "paymentTitle": { "type": "string", "maxLength": 64 },
+            "summaryTitle": { "type": "string", "maxLength": 64 },
+            "pickupTitle": { "type": "string", "maxLength": 64 }
+          }
+        },
+        "blocks": { "$ref": "#/$defs/blocks" }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "theme",
+  "target": "booking",
+  "name": "Default Booking Theme",
+  "slug": "default-booking-theme",
+  "version": "1.1.0",
+  "description": "Reference booking theme bundle aligned with the current idx-booking runtime.",
+  "portableThemeFile": "theme.json",
+  "previewAsset": "assets/preview.svg",
+  "bundleAssets": [
+    "assets/logo.svg",
+    "assets/powered-by-logo.svg",
+    "assets/preview.svg"
+  ],
+  "assets": {
+    "logo": "assets/logo.svg",
+    "poweredByLogo": "assets/powered-by-logo.svg"
+  },
+  "sdkVersion": "booking-host-2026-03",
+  "supportedContracts": [
+    {
+      "name": "IDX Booking Theme Host",
+      "version": "1.0.0",
+      "mode": "data_only",
+      "description": "Host-rendered booking theme contract with structured sections and plugin slot content."
+    }
+  ],
+  "capabilities": [
+    "color-palette",
+    "typography",
+    "copy-overrides",
+    "booking-flow-copy",
+    "claims-page-branding",
+    "plugin-slot-content",
+    "powered-by-branding"
+  ],
+  "runtime": {
+    "runtime": "theme-host",
+    "scope": "brand_scoped",
+    "environment": [
+      "idx-booking"
+    ],
+    "description": "Booking theme bundle consumed by the host runtime."
+  },
+  "deployment": {
+    "strategy": "brand_artifact",
+    "environment": "booking_storefront",
+    "rollout": "per_client_assignment",
+    "requiresRestart": false,
+    "requiresMigration": false
+  }
+}

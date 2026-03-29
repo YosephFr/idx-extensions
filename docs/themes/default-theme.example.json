@@ -1,0 +1,227 @@
+{
+  "colors": {
+    "primary": "#111827",
+    "secondary": "#475569",
+    "accent": "#0F172A",
+    "background": "#F8FAFC"
+  },
+  "typography": {
+    "headingFont": "DM Sans",
+    "bodyFont": "DM Sans"
+  },
+  "logoUrl": "https://cdn.example.com/idx/default-store-theme/logo.png",
+  "heroImages": [
+    "https://cdn.example.com/idx/default-store-theme/hero-01.jpg",
+    "https://cdn.example.com/idx/default-store-theme/hero-02.jpg"
+  ],
+  "layout": "grid",
+  "content": {
+    "header": {
+      "badge": "IDX Store Host",
+      "tagline": "Shell real del storefront con header, dock movil, catalogo, carrito y checkout bajo un mismo contrato.",
+      "announcement": {
+        "text": "El theme controla framing visual y copy; el host mantiene datos, pedidos y checkout.",
+        "link": {
+          "label": "Ver catalogo",
+          "href": "/products"
+        }
+      },
+      "secondaryLinks": [
+        {
+          "label": "Soporte",
+          "href": "mailto:soporte@example.com"
+        }
+      ],
+      "primaryAction": {
+        "label": "Iniciar pedido",
+        "href": "/products"
+      }
+    },
+    "navigation": {
+      "items": [
+        {
+          "label": "Inicio",
+          "href": "/"
+        },
+        {
+          "label": "Catalogo",
+          "href": "/products"
+        },
+        {
+          "label": "Carrito",
+          "href": "/cart"
+        }
+      ]
+    },
+    "footer": {
+      "title": "IDX Default Storefront",
+      "description": "Bundle de referencia del host real de idx-store: shell, rutas core y framing configurable sin tocar la logica de ecommerce.",
+      "navigationTitle": "Mapa del storefront",
+      "contactTitle": "Canales oficiales",
+      "contactText": "store.example.com",
+      "legalNote": "El theme redefine la presentacion del storefront, pero no puede cambiar precios, stock, ordenes ni medios de pago.",
+      "copyrightText": "2026 IDX Default Storefront",
+      "links": [
+        {
+          "label": "Soporte",
+          "href": "mailto:soporte@example.com"
+        },
+        {
+          "label": "Politica de privacidad",
+          "href": "https://example.com/privacy"
+        }
+      ],
+      "columns": [
+        {
+          "title": "Superficies cubiertas",
+          "text": "Header, navigation, footer, home, catalogo, producto, carrito y checkout.",
+          "links": [
+            {
+              "label": "Catalogo",
+              "href": "/products"
+            },
+            {
+              "label": "Carrito",
+              "href": "/cart"
+            },
+            {
+              "label": "Checkout",
+              "href": "/checkout"
+            }
+          ]
+        },
+        {
+          "title": "Runtime real",
+          "text": "Convive con slots de plugins, public pages soportadas y activos por tenant."
+        }
+      ]
+    },
+    "home": {
+      "eyebrow": "Default Theme",
+      "heroTitle": "Un storefront completo sobre el host real de IDX",
+      "heroDescription": "Este bundle no modela solo tokens visuales: tambien documenta el framing de header, footer, home, catalogo, producto, carrito y checkout.",
+      "heroActions": [
+        {
+          "label": "Explorar productos",
+          "href": "/products"
+        },
+        {
+          "label": "Ver carrito",
+          "href": "/cart"
+        }
+      ],
+      "categoriesTitle": "Explora por categoria",
+      "categoriesDescription": "Las categorias, productos y stock siguen viniendo del backend; el theme controla la capa de presentacion.",
+      "featuredTitle": "Seleccion curada",
+      "featuredDescription": "Puedes cambiar framing, copy y bloques sin reemplazar la logica de ecommerce.",
+      "emptyTitle": "Aun no hay productos activos",
+      "emptyDescription": "Cuando haya catalogo disponible, el host mantendra este framing.",
+      "sections": [
+        {
+          "eyebrow": "Host real",
+          "title": "Shell, rutas core y plugins publicos bajo un mismo contrato",
+          "description": "El host mantiene routing, datos y checkout; el bundle redefine framing y copy del storefront completo.",
+          "tone": "accent"
+        },
+        {
+          "title": "Dock movil del host",
+          "description": "El storefront ya deriva su navegacion movil desde rutas internas y la primera public page activa del runtime."
+        },
+        {
+          "title": "Overlay por marca",
+          "description": "Puedes publicar un theme base y superponer cambios por `activeDeveloperTheme` sin duplicar todo el bundle.",
+          "tone": "muted"
+        }
+      ]
+    },
+    "catalog": {
+      "eyebrow": "Catalogo",
+      "title": "Coleccion principal",
+      "description": "Framing y copy de catalogo administrados por el runtime del theme.",
+      "searchPlaceholder": "Buscar piezas, categorias o keywords",
+      "categoriesTitle": "Categorias",
+      "allCategoriesLabel": "Todas las categorias",
+      "filtersLabel": "Explorar filtros",
+      "emptyTitle": "Aun no hay productos publicados",
+      "emptyDescription": "Cuando existan productos activos, el host respetara este framing.",
+      "sections": [
+        {
+          "title": "Filtrado por categorias",
+          "description": "Sidebar, drawer movil y layout siguen siendo del host, pero el theme puede cambiar el relato."
+        },
+        {
+          "title": "Producto como pieza editorial",
+          "description": "El card y la pagina de detalle respetan este framing sin salir del contrato runtime."
+        }
+      ]
+    },
+    "product": {
+      "backLabel": "Volver al catalogo",
+      "descriptionTitle": "Detalle del producto",
+      "quantityLabel": "Unidades",
+      "addToCartLabel": "Agregar al pedido",
+      "addedLabel": "Agregado al pedido",
+      "relatedTitle": "Tambien puede interesarte",
+      "blocks": [
+        {
+          "title": "Compra asistida",
+          "description": "Usa bloques para reforzar despacho, cambios o promesas comerciales sin HTML arbitrario.",
+          "tone": "muted"
+        },
+        {
+          "title": "Promesa del storefront",
+          "description": "El producto mantiene precio, stock e imagenes reales; el theme aporta atmosfera y copy."
+        }
+      ]
+    },
+    "cart": {
+      "title": "Resumen de compra",
+      "description": "El host del carrito acepta framing extra sin reemplazar el flujo principal.",
+      "emptyTitle": "Tu carrito esta vacio",
+      "emptyDescription": "Agrega productos para continuar con el flujo de compra.",
+      "continueShoppingLabel": "Seguir explorando",
+      "summaryTitle": "Tu pedido",
+      "shippingLabel": "Entrega",
+      "shippingValue": "Coordinada por la tienda",
+      "checkoutLabel": "Continuar al checkout",
+      "summaryNote": "Puedes usar este espacio para notas operativas del storefront.",
+      "blocks": [
+        {
+          "title": "Retiro y entrega",
+          "description": "El theme puede explicar ventanas horarias, SLA o instrucciones previas al pago."
+        },
+        {
+          "title": "Plugins compatibles",
+          "description": "Slots como `cart-after-summary` siguen disponibles para extensiones aprobadas.",
+          "tone": "accent"
+        }
+      ]
+    },
+    "checkout": {
+      "title": "Confirma tu pedido",
+      "description": "El host conserva validaciones y creacion de orden, pero el theme controla framing y copy.",
+      "backLabel": "Volver al carrito",
+      "emptyTitle": "No hay items para confirmar",
+      "emptyDescription": "Agrega productos antes de iniciar el checkout.",
+      "submitLabel": "Enviar pedido",
+      "submitLoadingLabel": "Procesando pedido",
+      "sections": {
+        "contactTitle": "Datos del comprador",
+        "paymentTitle": "Pago y comprobante",
+        "summaryTitle": "Tu compra",
+        "pickupTitle": "Entrega o retiro"
+      },
+      "blocks": [
+        {
+          "title": "Antes de pagar",
+          "description": "Revisa datos de contacto y disponibilidad antes de confirmar."
+        },
+        {
+          "title": "El checkout sigue siendo del host",
+          "description": "La validacion, la creacion de orden y el metodo de pago actual no son redefinibles por el theme.",
+          "tone": "muted"
+        }
+      ]
+    }
+  }
+}

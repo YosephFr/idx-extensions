@@ -12,6 +12,15 @@ idx-extensions/
 │   ├── plugin-development-guide.md      # Plugin authoring specification
 │   ├── store-theme-guide.md             # Store theme host contract
 │   └── booking-theme-guide.md           # Booking theme host contract
+│   └── themes/
+│       ├── store-theme-contract.md      # Contrato detallado store host
+│       ├── booking-theme-contract.md    # Contrato detallado booking host
+│       ├── default-theme.schema.json    # Schema del theme store por defecto
+│       ├── default-theme.example.json   # Ejemplo canonical store
+│       ├── piombino-store-theme.example.json
+│       ├── piombino-store-theme.bundle.manifest.example.json
+│       ├── default-booking-theme.example.json
+│       └── default-booking-theme.manifest.json
 ├── plugins/
 │   └── whatsapp-button/                 # Floating WhatsApp button plugin
 │       ├── manifest.json
@@ -36,6 +45,7 @@ idx-extensions/
 | [Plugin Development Guide](docs/plugin-development-guide.md) | Full specification for authoring IDX plugins — manifest schema, runtime API, hook system, configuration fields, and review pipeline. |
 | [Store Theme Guide](docs/store-theme-guide.md) | Host contract for store themes — bundle structure, design tokens, content overrides, asset mapping, and deployment rules. |
 | [Booking Theme Guide](docs/booking-theme-guide.md) | Host contract for booking themes — bundle structure, design tokens, content overrides, and assignment rules. |
+| `docs/themes/*` | Contratos detallados, schemas y ejemplos canónicos para bundles de theme. |
 
 ## Examples
 
