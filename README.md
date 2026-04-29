@@ -4,39 +4,55 @@ Official repository of extension resources for the [IDX Platform](https://indexa
 
 This repository provides production-ready examples and development guides for building **plugins** and **themes** on IDX. All resources follow the platform's extension contracts and are designed to serve as authoritative references for developers integrating with the IDX Developer module.
 
+This repository is intentionally lightweight. It is documentation- and bundle-oriented: there is no `package.json`, no build pipeline, and no runtime. Plugins and themes are consumed as ZIP bundles uploaded through the IDX Developer admin section.
+
 ## Repository Structure
 
 ```
 idx-extensions/
 ├── docs/
-│   ├── plugin-development-guide.md      # Plugin authoring specification
-│   ├── store-theme-guide.md             # Store theme host contract
-│   └── booking-theme-guide.md           # Booking theme host contract
+│   ├── plugin-development-guide.md         # Plugin authoring specification
+│   ├── store-theme-guide.md                # Store theme host contract (overview)
+│   ├── booking-theme-guide.md              # Booking theme host contract (overview)
 │   └── themes/
-│       ├── store-theme-contract.md      # Contrato detallado store host
-│       ├── booking-theme-contract.md    # Contrato detallado booking host
-│       ├── default-theme.schema.json    # Schema del theme store por defecto
-│       ├── default-theme.example.json   # Ejemplo canonical store
+│       ├── store-theme-contract.md         # Detailed store host contract
+│       ├── booking-theme-contract.md       # Detailed booking host contract
+│       ├── default-theme.schema.json       # JSON Schema for the default store theme
+│       ├── default-theme.example.json      # Canonical default store theme
 │       ├── piombino-store-theme.example.json
 │       ├── piombino-store-theme.bundle.manifest.example.json
 │       ├── default-booking-theme.example.json
 │       └── default-booking-theme.manifest.json
 ├── plugins/
-│   └── whatsapp-button/                 # Floating WhatsApp button plugin
+│   └── whatsapp-button/                    # Floating WhatsApp button plugin
 │       ├── manifest.json
 │       └── src/
 │           ├── plugin.js
 │           └── plugin.css
 └── themes/
-    └── piombino/                        # Piombino restaurant storefront theme
+    ├── piombino/                           # Piombino restaurant storefront theme (canonical example)
+    │   ├── manifest.json
+    │   ├── theme.json
+    │   ├── README.md
+    │   └── assets/
+    │       ├── logo.png
+    │       ├── hero-1.jpg
+    │       └── hero-2.jpg
+    ├── piombino-v2-16b738c2/               # Snapshot of an older Piombino bundle published through IDX Developer
+    │   ├── manifest.json
+    │   ├── theme.json
+    │   └── assets/
+    │       ├── logo.png
+    │       └── logo-vertical.png
+    └── piombino-v3-8zbt6/                  # Snapshot of a newer Piombino bundle published through IDX Developer
         ├── manifest.json
         ├── theme.json
-        ├── README.md
         └── assets/
             ├── logo.png
-            ├── hero-1.jpg
-            └── hero-2.jpg
+            └── logo-vertical.png
 ```
+
+The `piombino-v2-*` and `piombino-v3-*` directories are versioned snapshots of the Piombino bundle as it was uploaded to the platform. They are kept here as a reference for how the platform stores theme versions internally (the suffix is the IDX Developer asset slug). When authoring a new theme, follow the canonical `themes/piombino/` example and the contracts in `docs/themes/`.
 
 ## Guides
 
