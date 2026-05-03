@@ -23,11 +23,11 @@ Los assets visuales publicados del theme pueden resolverse como:
 - URL `https://...`
 - ruta interna publicada como `/uploads/...` o cualquier otro path controlado del host
 
-El merge real ocurre en [src/lib/store-runtime.ts](/home/ubuntu/idx/idx-store/src/lib/store-runtime.ts):
+El merge real ocurre en [`src/lib/store-runtime/index.ts`](../../../idx-store/src/lib/store-runtime/index.ts):
 
 - `resolveStoreTheme()` unifica colores, tipografias, logo, hero images y layout.
 - `resolveStoreRuntime()` unifica `theme`, `content`, plugins, slots y public pages.
-- `buildThemeVars()` en [src/lib/theme-utils.ts](/home/ubuntu/idx/idx-store/src/lib/theme-utils.ts) deriva CSS vars desde el theme merged.
+- `buildThemeVars()` en [`src/lib/theme-utils.ts`](../../../idx-store/src/lib/theme-utils.ts) deriva CSS vars desde el theme merged.
 
 Consecuencia operativa: `theme.json` ya no representa solo overrides basicos. Puede describir el storefront actual completo dentro de los limites del host.
 
@@ -53,19 +53,19 @@ Reglas:
 
 | Superficie | Archivo host | Lo que controla el theme | Lo que sigue fijo en el host |
 | --- | --- | --- | --- |
-| `header` | [src/components/layout/store-header.tsx](/home/ubuntu/idx/idx-store/src/components/layout/store-header.tsx) | `badge`, `tagline`, `announcement`, `items`, `secondaryLinks`, `primaryAction`, `logoUrl` | boton menu mobile, buscador, icono de carrito, comportamiento sticky |
-| `navigation` | [src/components/layout/store-header.tsx](/home/ubuntu/idx/idx-store/src/components/layout/store-header.tsx), [src/components/layout/store-footer.tsx](/home/ubuntu/idx/idx-store/src/components/layout/store-footer.tsx), [src/components/layout/store-mobile-dock.tsx](/home/ubuntu/idx/idx-store/src/components/layout/store-mobile-dock.tsx) | lista compartida de links del storefront y rotulado base del dock movil | semantica de nav, fallbacks, seleccion final de items fijos mobile |
-| `footer` | [src/components/layout/store-footer.tsx](/home/ubuntu/idx/idx-store/src/components/layout/store-footer.tsx) | `title`, `description`, `navigationTitle`, `contactTitle`, `contactText`, `links`, `columns`, `legalNote`, `copyrightText` | estructura general, plugin slots, year fallback |
-| `home` | [src/app/page.tsx](/home/ubuntu/idx/idx-store/src/app/page.tsx) | hero, CTA, `heroActions`, intros, textos vacios, bloques, hero background via `heroImages[0]` | fetch de productos/categorias, featured fallback, product grid |
-| `catalog` | [src/app/products/page.tsx](/home/ubuntu/idx/idx-store/src/app/products/page.tsx), [src/app/products/catalog-client.tsx](/home/ubuntu/idx/idx-store/src/app/products/catalog-client.tsx) | titulos, descripciones, search placeholder, labels, empty state, bloques, `layout` grid/list | query params, filtros reales, paginacion, category tree, cards |
-| `product` | [src/app/products/[slug]/product-detail.tsx](/home/ubuntu/idx/idx-store/src/app/products/[slug]/product-detail.tsx) | back label, descripcion, quantity label, add-to-cart labels, related title, bloques | precio, stock, imagenes, categorias, add-to-cart logic |
-| `cart` | [src/app/cart/cart-client.tsx](/home/ubuntu/idx/idx-store/src/app/cart/cart-client.tsx), [src/components/cart/cart-summary.tsx](/home/ubuntu/idx/idx-store/src/components/cart/cart-summary.tsx) | titulos, descripcion, empty state, CTA, labels de resumen, nota y bloques | items, total, mutaciones del carrito |
-| `checkout` | [src/app/checkout/checkout-client.tsx](/home/ubuntu/idx/idx-store/src/app/checkout/checkout-client.tsx) | titulos, descripcion, empty state, textos del submit, nombres de secciones y bloques | validaciones, metodo de pago actual, creacion de orden |
-| `plugin public page` | [src/app/plugins/[pluginSlug]/page.tsx](/home/ubuntu/idx/idx-store/src/app/plugins/[pluginSlug]/page.tsx), [src/app/plugins/[pluginSlug]/claims-book-client.tsx](/home/ubuntu/idx/idx-store/src/app/plugins/[pluginSlug]/claims-book-client.tsx) | shell global, tokens visuales y cualquier framing heredado del host | payload del formulario, textos propios del plugin y submit endpoint |
+| `header` | [`src/components/layout/store-header.tsx`](../../../idx-store/src/components/layout/store-header.tsx) | `badge`, `tagline`, `announcement`, `items`, `secondaryLinks`, `primaryAction`, `logoUrl` | boton menu mobile, buscador, icono de carrito, comportamiento sticky |
+| `navigation` | [`src/components/layout/store-header.tsx`](../../../idx-store/src/components/layout/store-header.tsx), [`src/components/layout/store-footer.tsx`](../../../idx-store/src/components/layout/store-footer.tsx), [`src/components/layout/store-mobile-dock.tsx`](../../../idx-store/src/components/layout/store-mobile-dock.tsx) | lista compartida de links del storefront y rotulado base del dock movil | semantica de nav, fallbacks, seleccion final de items fijos mobile |
+| `footer` | [`src/components/layout/store-footer.tsx`](../../../idx-store/src/components/layout/store-footer.tsx) | `title`, `description`, `navigationTitle`, `contactTitle`, `contactText`, `links`, `columns`, `legalNote`, `copyrightText` | estructura general, plugin slots, year fallback |
+| `home` | [`src/app/page.tsx`](../../../idx-store/src/app/page.tsx) | hero, CTA, `heroActions`, intros, textos vacios, bloques, hero background via `heroImages[0]` | fetch de productos/categorias, featured fallback, product grid |
+| `catalog` | [`src/app/products/page.tsx`](../../../idx-store/src/app/products/page.tsx), [`src/app/products/catalog-client.tsx`](../../../idx-store/src/app/products/catalog-client.tsx) | titulos, descripciones, search placeholder, labels, empty state, bloques, `layout` grid/list | query params, filtros reales, paginacion, category tree, cards |
+| `product` | [`product-detail.tsx`](../../../idx-store/src/app/products/[slug]/product-detail.tsx) | back label, descripcion, quantity label, add-to-cart labels, related title, bloques | precio, stock, imagenes, categorias, add-to-cart logic |
+| `cart` | [`src/app/cart/cart-client.tsx`](../../../idx-store/src/app/cart/cart-client.tsx), [`src/components/cart/cart-summary.tsx`](../../../idx-store/src/components/cart/cart-summary.tsx) | titulos, descripcion, empty state, CTA, labels de resumen, nota y bloques | items, total, mutaciones del carrito |
+| `checkout` | [`src/app/checkout/checkout-client.tsx`](../../../idx-store/src/app/checkout/checkout-client.tsx) | titulos, descripcion, empty state, textos del submit, nombres de secciones y bloques | validaciones, metodo de pago actual, creacion de orden |
+| `plugin public page` | [`plugin page.tsx`](../../../idx-store/src/app/plugins/[pluginSlug]/page.tsx), [`claims-book-client.tsx`](../../../idx-store/src/app/plugins/[pluginSlug]/claims-book-client.tsx) | shell global, tokens visuales y cualquier framing heredado del host | payload del formulario, textos propios del plugin y submit endpoint |
 
 ## Slots y paginas publicas de plugins
 
-El host actual soporta estos slots documentados en [src/lib/types.ts](/home/ubuntu/idx/idx-store/src/lib/types.ts) y normalizados en [src/lib/store-runtime.ts](/home/ubuntu/idx/idx-store/src/lib/store-runtime.ts):
+El host actual soporta estos slots documentados en [`src/lib/types/index.ts`](../../../idx-store/src/lib/types/index.ts) y normalizados en [`src/lib/store-runtime/index.ts`](../../../idx-store/src/lib/store-runtime/index.ts):
 
 - `footer-links`
 - `footer-before`

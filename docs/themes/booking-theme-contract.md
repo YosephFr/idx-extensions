@@ -15,17 +15,17 @@ The current booking host exposes:
 - A public claims page rendered at `/[publicPage]` when an approved claims-capable plugin is active
 - Theme slot content that can decorate supported plugin slots without shipping arbitrary code
 
-The host contract is resolved in `src/lib/theme-utils.ts` and consumed from:
+The host contract is resolved in [`src/lib/theme-utils.ts`](../../../idx-booking/src/lib/theme-utils.ts) and consumed from:
 
-- `src/components/layout/layout.tsx`
-- `src/components/layout/header.tsx`
-- `src/components/layout/sidebar.tsx`
-- `src/components/layout/mobile-menu.tsx`
-- `src/components/layout/site-footer.tsx`
-- `src/components/runtime/booking-hero.tsx`
-- `src/components/booking/booking-footer.tsx`
-- `src/components/booking/success-screen.tsx`
-- `src/components/runtime/claims-page.tsx`
+- [`src/components/layout/layout.tsx`](../../../idx-booking/src/components/layout/layout.tsx)
+- [`src/components/layout/header.tsx`](../../../idx-booking/src/components/layout/header.tsx)
+- [`src/components/layout/sidebar.tsx`](../../../idx-booking/src/components/layout/sidebar.tsx)
+- [`src/components/layout/mobile-menu.tsx`](../../../idx-booking/src/components/layout/mobile-menu.tsx)
+- [`src/components/layout/site-footer.tsx`](../../../idx-booking/src/components/layout/site-footer.tsx)
+- [`src/components/runtime/booking-hero.tsx`](../../../idx-booking/src/components/runtime/booking-hero.tsx)
+- [`src/components/booking/booking-footer.tsx`](../../../idx-booking/src/components/booking/booking-footer.tsx)
+- [`src/components/booking/success-screen.tsx`](../../../idx-booking/src/components/booking/success-screen.tsx)
+- [`src/components/runtime/claims-page.tsx`](../../../idx-booking/src/components/runtime/claims-page.tsx)
 
 ## Resolution Order
 
@@ -37,7 +37,7 @@ The runtime merges theme data in this order:
 4. Legacy starter aliases (`settings`, `content`, `assets.logoUrl`, `logoUrl`)
 5. `tenant.client.settings.theme`
 6. `tenant.brand.settings.theme`
-7. Runtime defaults from `src/lib/theme-utils.ts`
+7. Runtime defaults from [`src/lib/theme-utils.ts`](../../../idx-booking/src/lib/theme-utils.ts)
 
 This means a production-ready bundle should keep its reusable default data under `theme` and use `overrides` only for narrow tenant-specific patches.
 The legacy starter aliases exist only for compatibility with the current developer kit and should not be treated as the long-term primary contract.

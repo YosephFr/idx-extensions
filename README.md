@@ -1,104 +1,36 @@
 # IDX Extensions
 
-Official repository of extension resources for the [IDX Platform](https://indexa.ar) — a multi-tenant, whitelabel SaaS platform for commerce, booking, and customer engagement.
+Public IDX extension contracts and examples.
 
-This repository provides production-ready examples and development guides for building **plugins** and **themes** on IDX. All resources follow the platform's extension contracts and are designed to serve as authoritative references for developers integrating with the IDX Developer module.
+Owns plugin/theme development guides, contract examples, plugin examples and
+theme snapshots. Runtime validation/enforcement lives in `idx-engine`,
+`idx-store`, `idx-booking` and admin UIs.
 
-This repository is intentionally lightweight. It is documentation- and bundle-oriented: there is no `package.json`, no build pipeline, and no runtime. Plugins and themes are consumed as ZIP bundles uploaded through the IDX Developer admin section.
+## Structure
 
-## Repository Structure
-
-```
-idx-extensions/
-├── docs/
-│   ├── plugin-development-guide.md         # Plugin authoring specification
-│   ├── store-theme-guide.md                # Store theme host contract (overview)
-│   ├── booking-theme-guide.md              # Booking theme host contract (overview)
-│   └── themes/
-│       ├── store-theme-contract.md         # Detailed store host contract
-│       ├── booking-theme-contract.md       # Detailed booking host contract
-│       ├── default-theme.schema.json       # JSON Schema for the default store theme
-│       ├── default-theme.example.json      # Canonical default store theme
-│       ├── piombino-store-theme.example.json
-│       ├── piombino-store-theme.bundle.manifest.example.json
-│       ├── default-booking-theme.example.json
-│       └── default-booking-theme.manifest.json
-├── plugins/
-│   └── whatsapp-button/                    # Floating WhatsApp button plugin
-│       ├── manifest.json
-│       └── src/
-│           ├── plugin.js
-│           └── plugin.css
-└── themes/
-    ├── piombino/                           # Piombino restaurant storefront theme (canonical example)
-    │   ├── manifest.json
-    │   ├── theme.json
-    │   ├── README.md
-    │   └── assets/
-    │       ├── logo.png
-    │       ├── hero-1.jpg
-    │       └── hero-2.jpg
-    ├── piombino-v2-16b738c2/               # Snapshot of an older Piombino bundle published through IDX Developer
-    │   ├── manifest.json
-    │   ├── theme.json
-    │   └── assets/
-    │       ├── logo.png
-    │       └── logo-vertical.png
-    └── piombino-v3-8zbt6/                  # Snapshot of a newer Piombino bundle published through IDX Developer
-        ├── manifest.json
-        ├── theme.json
-        └── assets/
-            ├── logo.png
-            └── logo-vertical.png
-```
-
-The `piombino-v2-*` and `piombino-v3-*` directories are versioned snapshots of the Piombino bundle as it was uploaded to the platform. They are kept here as a reference for how the platform stores theme versions internally (the suffix is the IDX Developer asset slug). When authoring a new theme, follow the canonical `themes/piombino/` example and the contracts in `docs/themes/`.
-
-## Guides
-
-| Document | Description |
+| Path | Purpose |
 |---|---|
-| [Plugin Development Guide](docs/plugin-development-guide.md) | Full specification for authoring IDX plugins — manifest schema, runtime API, hook system, configuration fields, and review pipeline. |
-| [Store Theme Guide](docs/store-theme-guide.md) | Host contract for store themes — bundle structure, design tokens, content overrides, asset mapping, and deployment rules. |
-| [Booking Theme Guide](docs/booking-theme-guide.md) | Host contract for booking themes — bundle structure, design tokens, content overrides, and assignment rules. |
-| `docs/themes/*` | Contratos detallados, schemas y ejemplos canónicos para bundles de theme. |
+| `docs/plugin-development-guide.md` | plugin bundle/runtime contract |
+| `docs/store-theme-guide.md` | store theme authoring guide |
+| `docs/booking-theme-guide.md` | booking theme authoring guide |
+| `docs/themes/` | schemas, contracts and example theme JSON |
+| `plugins/whatsapp-button/` | plugin example |
+| `themes/piombino*/` | theme snapshots/examples |
 
-## Examples
+## Docs
 
-### Plugins
+- [docs/00-overview.md](docs/00-overview.md)
+- [docs/01-plugin-contract.md](docs/01-plugin-contract.md)
+- [docs/02-theme-contract.md](docs/02-theme-contract.md)
+- [docs/03-storefront-slots.md](docs/03-storefront-slots.md)
+- [docs/04-booking-slots.md](docs/04-booking-slots.md)
+- [docs/05-examples-index.md](docs/05-examples-index.md)
+- [docs/06-publishing-guidelines.md](docs/06-publishing-guidelines.md)
+- [docs/plugin-development-guide.md](docs/plugin-development-guide.md)
+- [docs/store-theme-guide.md](docs/store-theme-guide.md)
+- [docs/booking-theme-guide.md](docs/booking-theme-guide.md)
 
-**WhatsApp Button** (`plugins/whatsapp-button/`) — A production-ready plugin that renders a floating WhatsApp contact button on storefronts. Demonstrates configuration-driven UI, multi-branch support, responsive design, and proper lifecycle management via the `IDX_PLUGIN` runtime API.
+## Boundary
 
-### Themes
-
-**Piombino** (`themes/piombino/`) — A premium restaurant-oriented store theme featuring warm editorial aesthetics, custom typography (Arvo + Montserrat), full content overrides for every storefront section, and bundled brand assets. Serves as a comprehensive reference for the store theme contract.
-
-## Getting Started
-
-1. Review the relevant guide in `docs/` for the extension type you intend to build.
-2. Study the corresponding example to understand manifest structure, runtime integration, and best practices.
-3. Package your extension as a ZIP bundle conforming to the documented contract.
-4. Upload the bundle through the IDX Developer section in the admin panel. The platform will validate, analyze, and review the artifact before it becomes available for client activation.
-
-## Extension Lifecycle
-
-All extensions follow a managed lifecycle within the IDX Developer module:
-
-1. **Upload** — Submit a ZIP bundle through the admin panel.
-2. **Validation** — Automated manifest and contract validation.
-3. **Security Analysis** — Static code analysis for forbidden patterns and unsafe behaviors.
-4. **Review** — Automated review process evaluating code quality, contract compliance, and security posture.
-5. **Approval** — Once approved, the extension becomes available for per-client activation.
-6. **Activation** — Brand administrators assign approved extensions to individual clients.
-
-## Platform Constraints
-
-- Plugins execute exclusively in the browser. Server-side code, Node.js imports, and raw network requests are not permitted.
-- Themes operate within the host rendering contract. They cannot introduce unmanaged backend behavior.
-- All extensions are brand-scoped and tenant-isolated. Activation is controlled per client.
-- CSS class names must be namespaced to prevent style conflicts (e.g., `idx-{plugin-slug}-*`).
-- Extensions must clean up all DOM elements and event listeners on `runtime.dispose`.
-
-## License
-
-Proprietary. These resources are provided for development purposes within the IDX Platform ecosystem.
+Do not document platform runtime behavior here unless it is part of the public
+extension contract.
