@@ -1,10 +1,12 @@
 # IDX Extensions
 
-Public IDX extension contracts and examples.
+Public extension contract repository for IDX. This repo owns documentation,
+schemas, examples and snapshots for plugin and theme authors. Runtime
+validation/enforcement lives in `idx-engine`, while rendering/runtime
+consumption lives in `idx-store`, `idx-booking` and admin surfaces in
+`idx-front`.
 
-Owns plugin/theme development guides, contract examples, plugin examples and
-theme snapshots. Runtime validation/enforcement lives in `idx-engine`,
-`idx-store`, `idx-booking` and admin UIs.
+This repo is not a service and is not part of root Docker Compose.
 
 ## Structure
 
@@ -14,8 +16,18 @@ theme snapshots. Runtime validation/enforcement lives in `idx-engine`,
 | `docs/store-theme-guide.md` | store theme authoring guide |
 | `docs/booking-theme-guide.md` | booking theme authoring guide |
 | `docs/themes/` | schemas, contracts and example theme JSON |
-| `plugins/whatsapp-button/` | plugin example |
+| `plugins/whatsapp-button/` | complete plugin example |
 | `themes/piombino*/` | theme snapshots/examples |
+
+## Contract Surfaces
+
+| Contract | Runtime consumer |
+|---|---|
+| Store theme | `idx-store` theme runtime and admin/developer surfaces |
+| Booking theme | `idx-booking` theme runtime and admin/developer surfaces |
+| Plugin manifest/bundle | `idx-engine` developer module and storefront runtime hosts |
+| Storefront slots | `idx-store/src/components/runtime/` |
+| Booking slots | `idx-booking/src/components/runtime/` |
 
 ## Docs
 
@@ -30,7 +42,11 @@ theme snapshots. Runtime validation/enforcement lives in `idx-engine`,
 - [docs/store-theme-guide.md](docs/store-theme-guide.md)
 - [docs/booking-theme-guide.md](docs/booking-theme-guide.md)
 
-## Boundary
+## Invariants
 
-Do not document platform runtime behavior here unless it is part of the public
-extension contract.
+- Document public extension contracts only.
+- Do not document private platform runtime details here unless an extension
+  author must know them.
+- Keep examples complete enough to run through the developer/theme runtime.
+- Keep schema changes synchronized with `idx-engine`, `idx-store`,
+  `idx-booking` and `idx-front` docs.

@@ -21,8 +21,12 @@
 - plugin examples
 - theme snapshots
 
+Runtime enforcement belongs to `idx-engine`; runtime rendering belongs to
+`idx-store`, `idx-booking` and admin/developer surfaces in `idx-front`.
+
 ## Update Triggers
 
 - New plugin/theme contract.
 - New slot.
 - New example bundle.
+- Store/booking runtime support change.
